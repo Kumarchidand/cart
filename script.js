@@ -25,21 +25,18 @@ function updateGrid() {
       <img src="${product.img}" alt="${product.title}">
       <div class="product-title">${product.title}</div>
       <div class="product-price">$${product.price.toFixed(2)}</div>
-  <button class="bundle-btn ${isSelected ? 'selected' : ''}">
-  <span>${isSelected ? 'Added to Bundle' : 'Add to Bundle'}</span>
-  <img 
-    src="assets/icons/${isSelected ? 'Check.svg' : 'Plus.svg'}" 
-    class="btn-icon" 
-    alt="${isSelected ? 'check' : 'plus'}"
-  >
-</button>
-
+      <button class="bundle-btn ${isSelected ? 'selected' : ''}">
+        <span>${isSelected ? 'Added to Bundle' : 'Add to Bundle'}</span>
+        <img src="assets/icons/${isSelected ? 'Check.svg' : 'Plus.svg'}" 
+             class="btn-icon" 
+             alt="${isSelected ? 'check' : 'plus'}">
+      </button>
     `;
 
     // Button toggle
     const btn = card.querySelector("button");
     btn.onclick = () => {
-      if (!isSelected) {
+      if (!isSelected && selected.length < 3) {
         selected.push(product.id); // add
       } else {
         const idx = selected.indexOf(product.id);
@@ -77,7 +74,7 @@ function updateSidebar() {
   });
 
   let discount = 0;
-  if (selected.length >= 3) {
+  if (selected.length <= 3) {
     discount = total * 0.3;
     document.getElementById('addToCartBtn').disabled = false;
   } else {
