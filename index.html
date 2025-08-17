@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buy 3 and Save 30%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Header -->
+      <header>
+        <h1>Buy 3 and Save 30%</h1>
+      </header>
+
+      <!-- Product Grid -->
+      <section class="products-grid" id="productsGrid"></section>
+
+      <!-- Sidebar for bundle -->
+      <aside class="bundle-sidebar" id="bundleSidebar">
+        <h2>Create a Bundle</h2>
+
+        <!-- Progress bar -->
+        <div class="progress-bar">
+          <div class="progress" id="progressBar"></div>
+        </div>
+        <p><span id="progress">0</span>/3 added</p>
+
+        <!-- Selected product list -->
+        <ul id="bundleList"></ul>
+
+        <!-- Totals -->
+        <div class="totals">
+          <div>Discount: <span id="discount">$0.00</span></div>
+          <div>Subtotal: <span id="subtotal">$0.00</span></div>
+        </div>
+
+        <!-- CTA Button -->
+        <button id="addToCartBtn" disabled>
+          Add Bundle to Cart
+          <img
+            src="assets/icons/Check.svg"
+            alt="check"
+            style="width: 16px; height: 16px; margin-left: 8px"
+          />
+        </button>
+      </aside>
+    </main>
+
+    <!-- Link external JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
